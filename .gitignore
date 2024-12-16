@@ -1,2 +1,4 @@
 # puzzle inputs
 *.txt
+
+.vscode/
