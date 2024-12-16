@@ -18,8 +18,8 @@ checks: list[list[int]] = [
     # check diagonal up left
     [-1, -1]
 ]
-word = 'MAS'
-word_set = set(['M','A','S'])
+word = ['M', 'A', 'S']
+word_set = set(word)
 
 
 def boundsCheck(x, y, con):
@@ -53,9 +53,9 @@ def performChecks2(x: int, y: int, con: list[str]) -> int:
 
 
 def puzzleTwo():
-    with open('puzzle_input.txt') as f:
-        contents = f.read().split('\n')
+    with open('puzzle.txt') as f: contents = f.read().split('\n')
     total = 0
+
     for i, line in enumerate(contents):
         for j, ch in enumerate(line):
             if ch != 'A':
@@ -65,9 +65,9 @@ def puzzleTwo():
 
 
 def puzzleOne():
-    with open('puzzle_input.txt') as f:
-        contents = f.read().split('\n')
+    with open('puzzle.txt') as f: contents = f.read().split('\n')
     total = 0
+
     for i, line in enumerate(contents):
         for j, ch in enumerate(line):
             if ch != 'X':

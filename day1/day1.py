@@ -1,30 +1,20 @@
 import bisect
-from functools import reduce
-
-def diff(l: int, r: int) -> int:
-    return l - r
 
 def puzzle_one():
     left_list, right_list = [], []
-    with open('puzzle_input.txt') as f:
-        line = f.readline()
-        while line:
-            l, r = line.split()
-            bisect.insort(left_list, int(l))
-            bisect.insort(right_list, int(r))
-            line = f.readline()
+    for line in open('puzzle.txt'):
+        l, r = line.split()
+        bisect.insort(left_list, int(l))
+        bisect.insort(right_list, int(r))
+    print(sum(abs(l - r) for l, r in zip(left_list, right_list)))
 
-    print(sum(abs(l-r) for l,r in zip(left_list, right_list)))
 
 def puzzle_two():
     left_list, right_list = [], []
-    with open('puzzle_input.txt') as f:
-        line = f.readline()
-        while line:
-            l, r = line.split()
-            left_list.append(int(l))
-            right_list.append(int(r))
-            line = f.readline()
+    for line in open('puzzle.txt'):
+        l, r = line.split()
+        left_list.append(int(l))
+        right_list.append(int(r))
 
     right_dict = {}
     for i in set(right_list):
@@ -36,6 +26,6 @@ def puzzle_two():
             sum_duplicates += l * right_dict[l]
     print(sum_duplicates)
 
-if __name__ == "__main__":
-    # puzzle_one()
-    puzzle_two()
+
+puzzle_one()
+puzzle_two()

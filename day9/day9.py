@@ -55,7 +55,7 @@ def puzzleTwo():
 
 
 def puzzleOne():
-    input = list(map(int, list(open('puzzle_input.txt').readline().strip())))
+    input = list(map(int, list(open('puzzle.txt').readline().strip())))
     res = [] 
     id = 0
     for idx, i in enumerate(input):

@@ -37,7 +37,7 @@ def trailCount(
 
 
 def puzzleOne():
-    input = [list(map(int, list(l.strip()))) for l in open('test_input.txt')]
+    input = [list(map(int, list(l.strip()))) for l in open('test.txt')]
     sum = trailCount(input, 2, 0)
     print(input)
     print(sum)

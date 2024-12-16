@@ -8,7 +8,7 @@ def getAllSums(idx: int, factors: list[int], curr_sum: int, sums: list[int]):
 
 def puzzleOne():
     final_total = 0
-    for l in open('puzzle_input.txt'):
+    for l in open('puzzle.txt'):
         numbers = l.split(' ')
         total = int(numbers[0][:len(numbers[0])-1])
         factors = list(map(int, numbers[1:]))
@@ -30,7 +30,7 @@ def getAllSums2(idx: int, factors: list[int], curr_sum: int, sums: list[int]):
 
 def puzzleTwo():
     final_total = 0
-    for l in open('puzzle_input.txt'):
+    for l in open('puzzle.txt'):
         numbers = l.split(' ')
         total = int(numbers[0][:len(numbers[0])-1])
         factors = list(map(int, numbers[1:]))

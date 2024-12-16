@@ -10,8 +10,7 @@ move_directions: dict[str, tuple[int]] = {
 
 
 def boundsCheck(x: int, y: int, l: list[list[int]]) -> bool:
-    return x >= 0 and x < len(l[0]) and \
-            y >= 0 and y < len(l)
+    return x >= 0 and x < len(l[0]) and y >= 0 and y < len(l)
 
 
 # adds an obstruction to a map and checks if it causes a loop
@@ -27,8 +26,7 @@ def causesLoop(pos: list[int], start: list[int], direction: str, checkMap: list[
         'right': []
     }
     while True:
-        x_offset = move_directions[direction][0]
-        y_offset = move_directions[direction][1]
+        x_offset, y_offset = move_directions[direction]
         if not boundsCheck(curr_pos[0] + x_offset, curr_pos[1] + y_offset, m):
             return False
         if m[curr_pos[1]+y_offset][curr_pos[0]+x_offset] == '#':
@@ -54,7 +52,7 @@ def puzzleTwo():
     # x, y
     pos: list[int] = [-1, -1]
     direction = ''
-    for y, line in enumerate(open('puzzle_input.txt')):
+    for y, line in enumerate(open('puzzle.txt')):
         input.append(line.strip())
         search = r.search(line)
         if search:
@@ -73,8 +71,7 @@ def puzzleTwo():
     # get all positions the guard visits on his route, excluding the start position 
     visited: set[tuple[int]] = set()
     while True:
-        x_offset = move_directions[direction][0]
-        y_offset = move_directions[direction][1]
+        x_offset, y_offset = move_directions[direction]
         if not boundsCheck(pos[0] + x_offset, pos[1] + y_offset, input):
             break
         if input[pos[1]+y_offset][pos[0]+x_offset] == '#':
@@ -107,7 +104,7 @@ def puzzleOne():
     # x, y
     pos: list[int] = [-1, -1]
     direction = ''
-    for y, line in enumerate(open('puzzle_input.txt')):
+    for y, line in enumerate(open('puzzle.txt')):
         input.append(line.strip())
         search = r.search(line)
         if search:
@@ -127,8 +124,7 @@ def puzzleOne():
         if (pos[0], pos[1]) not in visited:
             visited.add((pos[0], pos[1]))
         
-        x_offset = move_directions[direction][0]
-        y_offset = move_directions[direction][1]
+        x_offset, y_offset = move_directions[direction]
         
         if not boundsCheck(pos[0] + x_offset, pos[1] + y_offset, input):
             break
@@ -149,5 +145,5 @@ def puzzleOne():
     print(len(visited))
 
 
-# puzzleOne()
+puzzleOne()
 puzzleTwo()

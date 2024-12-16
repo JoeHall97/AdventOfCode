@@ -24,7 +24,7 @@ def puzzleTwo():
     order_map: dict[int, list[int]] = {}
     parsing_order = True
     sum = 0
-    for line in open('puzzle_input.txt'):
+    for line in open('puzzle.txt'):
         if parsing_order and '|' not in line:
             parsing_order = False
             continue
@@ -47,7 +47,7 @@ def puzzleOne():
     order_map: dict[int, list[int]] = {}
     parsing_order = True
     sum = 0
-    for line in open('puzzle_input.txt'):
+    for line in open('puzzle.txt'):
         if parsing_order and '|' not in line:
             parsing_order = False
             continue
@@ -64,5 +64,5 @@ def puzzleOne():
     print(sum)
 
 
-# puzzleOne()
+puzzleOne()
 puzzleTwo()

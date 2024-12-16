@@ -10,7 +10,7 @@ def puzzleTwo():
     # read in the input and grab the location of each station,
     # grouping them by their frequency
     stations: dict[int, list[tuple[int]]] = {}
-    for idx, l in enumerate(open('puzzle_input.txt')):
+    for idx, l in enumerate(open('puzzle.txt')):
         for m in r.finditer(l):
             station = l[m.start():m.end()]
             if station not in stations:
@@ -65,7 +65,7 @@ def puzzleOne():
     # read in the input and grab the location of each station,
     # grouping them by their frequency
     stations: dict[int, list[tuple[int]]] = {}
-    for idx, l in enumerate(open('puzzle_input.txt')):
+    for idx, l in enumerate(open('puzzle.txt')):
         for m in r.finditer(l):
             station = l[m.start():m.end()]
             if station not in stations:
