@@ -53,7 +53,6 @@ def puzzleTwo():
     printFileCheckSum(res)
 
 
-
 def puzzleOne():
     input = list(map(int, list(open('puzzle.txt').readline().strip())))
     res = [] 
