@@ -1,5 +1,6 @@
 import re
 
+
 def boundsCheck(x, y, con):
     return y >= 0 and y < len(con) and x >= 0 and x < len(con[y])
 
@@ -108,3 +109,4 @@ def puzzleOne():
 
 puzzleOne()
 puzzleTwo()
+

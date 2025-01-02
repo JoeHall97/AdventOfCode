@@ -8,7 +8,6 @@ def getNumStones(stone: int, curr_depth: int) -> int:
         return 1
     if stone == 0:
         return getNumStones(1, curr_depth + 1)
-    # not sure if this is faster than just converting to a string, but it's cooler
     elif int(math.log10(stone) + 1) % 2 == 0:
         div_pow = pow(10, (int(math.log10(stone) + 1) // 2))
         s = stone // div_pow
@@ -23,7 +22,7 @@ def puzzleTwo():
     total_len = 0
     for i in input:
         total_len += getNumStones(i, 0)
-    print(total_len) 
+    print(total_len)
 
 
 def puzzleOne():
@@ -46,3 +45,4 @@ def puzzleOne():
 
 puzzleOne()
 puzzleTwo()
+

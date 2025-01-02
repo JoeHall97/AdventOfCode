@@ -14,7 +14,6 @@ def printDebugString(input: list[list[int]]):
 
 # helper function for the second puzzle
 def printFileCheckSum(res: list[list[int]]):
-    file = []
     checksum = 0
     idx = 0
     for r in res:
@@ -26,7 +25,7 @@ def printFileCheckSum(res: list[list[int]]):
 
 
 def puzzleTwo():
-    res = [] 
+    res = []
     id = 0
     for idx, i in enumerate(list(open('puzzle_input.txt').readline().strip())):
         if idx % 2 == 0:
@@ -55,7 +54,7 @@ def puzzleTwo():
 
 def puzzleOne():
     input = list(map(int, list(open('puzzle.txt').readline().strip())))
-    res = [] 
+    res = []
     id = 0
     for idx, i in enumerate(input):
         if idx % 2 == 0:
@@ -81,3 +80,4 @@ def puzzleOne():
 
 puzzleOne()
 puzzleTwo()
+
